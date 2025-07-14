@@ -1,28 +1,20 @@
-import { createRouter as _createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
+// 简化的路由配置
 const routes = [
   {
     path: '/',
-    name: 'PageView',
-    redirect: '/home',
-    component: () => import('@/view/PageView.vue'),
-    children: [
-      {
-        path: '/home',
-        name: 'Home',
-        component: () => import('@/view/HomePage.vue'),
-        meta: {
-          title: '首页'
-        }
-      }
-    ]
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: () => import('@/view/PageView.vue')
   }
 ]
 
-export function createRouter() {
-  return _createRouter({
-    history: createWebHashHistory(),
-    routes
-  })
-}
+export default createRouter({
+  history: createWebHashHistory(),
+  routes
+})
 

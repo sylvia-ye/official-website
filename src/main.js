@@ -1,21 +1,15 @@
 import { createApp } from 'vue'
-import { createRouter } from '@/router'
-
-
-/* 重置样式 */
-import './assets/css/reset.min.css'
-
-// import 'jquery'
-import './assets/css/bootstrap.min.css'
-import './assets/js/bootstrap.min.js'
-
-/* animate.css */
-import 'wow.js/css/libs/animate.css'
-
+import router from '@/router'
 import App from './App.vue'
 
-const router = createRouter()
-const app = createApp(App)
+// 导入样式
+import './assets/css/reset.min.css'
+import './assets/css/bootstrap.min.css'
+import 'wow.js/css/libs/animate.css'
 
-app.use(router).mount('#app')
+// 导入 JS
+import './assets/js/bootstrap.min.js'
+
+// 创建应用
+createApp(App).use(router).mount('#app')
 
